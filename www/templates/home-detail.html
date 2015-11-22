@@ -1,11 +1,19 @@
 <ion-view view-title="Rolled!">
   <ion-content>
- 
+            <div class="list card" ng-repeat="item in items | orderBy: '-createdAt'"
+	      			item="item"
+	      			href="#/food/edit/{{item.objectId}}">
 
 
-   <img src="{{item.imageFile.url}}">
-   <p>{{item.Title}}</p>
-   <p>{{item.Date}}</p>
-   <p>{{item.Body}}</p>
-  </ion-content>
+      <!-- Image File -->
+     
+	      <p>{{item.Name}}</p>
+	      <p>{{item.Location}}</p>
+
+
+      </div>
+       <ion-button class="button button-assertive ion-loop" style="width:100%" ng-click="myGoBack()">
+                ReRoll
+            </ion-button>
+    </ion-content>
 </ion-view>

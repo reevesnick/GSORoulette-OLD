@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','starter.controllers'])
+angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -17,6 +17,25 @@ angular.module('starter', ['ionic','starter.controllers'])
     }
       
       Parse.initialize("SQwOQRG77Srys4HiIBKdrPAQla89KPPSljjzMksv", "X3WmND91CkCfpT4ltb0gFB9h7yLm6BgVuAVyXvBV");
+      
+      if(!(ionic.Platform.isIOS() || ionic.Platform.isAndroid())){
+  window.fbAsyncInit = function() {
+      Parse.FacebookUtils.init({
+          appId      : '911530332265226', 
+          version    : 'v2.3',
+          xfbml      : true
+      });
+  };
+ 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+}
+      
   });
 })
 
@@ -34,11 +53,11 @@ angular.module('starter', ['ionic','starter.controllers'])
         templateUrl: 'templates/home.html',
         controller: 'HomeCtrl'
   })
-  /*
- .state('result', {
-        url: '/result,
+  
+  .state('result', {
+        url: '/home/result',
         templateUrl: 'templates/home-detail.html',
         controller: 'ResultCtrl'
-  })*/;
+  });
     $urlRouterProvider.otherwise('/home');
 });
