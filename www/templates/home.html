@@ -1,25 +1,26 @@
 <ion-view class="custom-blue" view-title="GSORoulette">
-  <ion-content class="custom-blue">
+  <ion-content class="custom-blue" scroll="false">
         <ion-list class="custom-blue">
             <div class="Profile">
-                <ion-item>
+                <ion-item class="custom-blue">
                     <img aligin="left" src="">
-                    <p align="center">Name</p>
-                    <p>Check-In:0 
-                        Recommendation: 0</p>
+                    <p style="align:center">Name</p>
+                    <p>Check-In:0 </p>
+                        <p>Recommendation: 0</p>
                     <p>Likes:0</p>
                 </ion-item>
             </div>
-            <ion-item ng-Click="foodSelect()">Food</ion-item>
-            <ion-item ng-Click="pubSelect()">Pub</ion-item>
-            <ion-item ng-Click="clubSelect()">Nightlife</ion-item>
-            <ion-item ng-Click="parkSelect()">Parks/Greenways</ion-item>
-            <ion-item ng-Click="moviesSelect()">Movies/Shows</ion-item>
-            <ion-item ng-Click="artSelect()">Art/Museums</ion-item>
+            
+            <ion-item class="custom-blue" ng-Click="foodSelect()">Food</ion-item>
+            <ion-item class="custom-blue" ng-Click="pubSelect()">Pub</ion-item>
+            <ion-item class="custom-blue" ng-Click="clubSelect()">Nightlife</ion-item>
+            <ion-item class="custom-blue" ng-Click="parkSelect()">Parks/Greenways</ion-item>
+            <ion-item class="custom-blue" ng-Click="moviesSelect()">Movies/Shows</ion-item>
+            <ion-item class="custom-blue" ng-Click="artSelect()">Art/Museums</ion-item>
+            
  <ion-button class="button button-balanced ion-loop" style="width:100%" ng-click="create()">
                 Roll
             </ion-button>
         </ion-list>
   </ion-content>
 </ion-view>
-

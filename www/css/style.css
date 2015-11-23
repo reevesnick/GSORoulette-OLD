@@ -1,5 +1,14 @@
 /* Empty. Add your own CSS if you like */
-.custom-blue{
+.custom-blue,ion-list{
   color : white !important;
   background-color:#0099cc !important;
+}
+
+
+.item .item-content {
+  background-color: #0099cc !important;
+}
+
+.status-label{
+    color: aliceblue !important;
 }

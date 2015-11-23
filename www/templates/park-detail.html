@@ -1,17 +1,20 @@
 <ion-view view-title="Rolled!">
   <ion-content class="custom-blue">
-            <div class="list card" ng-repeat="item in items | orderBy:random |limitTo: 1"
+            <div class="list card" ng-repeat="item in items | orderBy:random |limitTo:1"
 	      			item="item"
 	      			href="#/food/edit/{{item.objectId}}" >
 
-
+ <div class="item item-image"
+                    item="item"
+	      			href="#/park/create/{{item.objectId}}/{{item.imageFile}}"
+	      			ng-if="item.imageFile">
 
 		  <img src="{{item.imageFile.url}}">
-	      <h4 style="align:center">{{item.Name}}</h4>
+	      <h4 >{{item.Name}}</h4>
 	      <p>{{item.Location}}</p>
           <p>{{item.Phone}}</p>     
           <p>{{item.Hours}}</p>     
-
+        </div>
 
       </div>
        <ion-button class="button button-assertive ion-loop" style="width:100%" ng-click="myGoBack()">
