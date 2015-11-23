@@ -78,27 +78,9 @@ var _this = this
 
         }).then(function(result) {
     $ionicLoading.hide()
-   // _this.breweries = result.data.breweries
   });
     }
-   /* 
-        $scope.foodSelect = function(item){
-            Food.get(item.objectId);
-            $scope.items = item;
-      
-
-        $state.go('result');
-    }
-    */
-/*
-    function makeRandom(inputArray){
-        angular.forEach(inputArray,function(value){
-            value.rank = Math.random();
-        });
-        return inputArray
-    }
-    
-    */
+ 
 }])
 
 .controller('ResultCtrl', function($ionicHistory,$scope,$ionicLoading,Food,$state){
@@ -118,5 +100,6 @@ var _this = this
     $ionicLoading.hide()
    // _this.breweries = result.data.breweries
   });
+
 
 });

@@ -1,14 +1,14 @@
 <ion-view view-title="Rolled!">
   <ion-content>
-            <div class="list card" ng-repeat="item in items | orderBy: '-createdAt'"
+            <div class="list card" ng-repeat="item in items | orderBy: random |limitTo: 1"
 	      			item="item"
-	      			href="#/food/edit/{{item.objectId}}">
+	      			href="#/food/edit/{{item.objectId}}" >
 
 
       <!-- Image File -->
      
-	      <p>{{item.Name}}</p>
-	      <p>{{item.Location}}</p>
+	      <p size="1">{{item.Name}}</p>
+	      <p size="1">{{item.Location}}</p>
 
 
       </div>
