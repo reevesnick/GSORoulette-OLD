@@ -88,7 +88,6 @@ angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngC
         url: '/home/artresult',
         templateUrl: 'templates/art-detail.html',
         controller: 'ArtCtrl'
-  })
-  ;
+  });
     $urlRouterProvider.otherwise('/home');
 });
