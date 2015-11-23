@@ -101,5 +101,8 @@ var _this = this
    // _this.breweries = result.data.breweries
   });
 
+     $scope.random = function() {
+        return 0.5 - Math.random();
+    }
 
 });
