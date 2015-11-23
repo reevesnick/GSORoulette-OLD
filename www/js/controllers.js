@@ -66,23 +66,22 @@ angular.module('starter.controllers', [])
 })
 .controller('HomeCtrl',['$scope','$state','Food','$ionicLoading' ,function($scope,$state,Food,$ionicLoading){
     $scope.foodSelect = function(){
-
-            // Loading Screen
-var _this = this
-  $ionicLoading.show({
-    template: 'Searching the GSO'
-  })
+        // Loading Screen
+        var _this = this
+            $ionicLoading.show({
+                template: 'Searching the GSO'
+        })
        Food.getAll().success(function(data){
             $scope.items=data.results;
                 $state.go('result');
 
-        }).then(function(result) {
-    $ionicLoading.hide()
-  });
+            }).then(function(result) {
+            $ionicLoading.hide()
+       });
     }
  
 }])
-
+// Food Control
 .controller('ResultCtrl', function($ionicHistory,$scope,$ionicLoading,Food,$state){
  $scope.myGoBack = function(){
     $ionicHistory.goBack();
@@ -105,4 +104,128 @@ var _this = this
         return 0.5 - Math.random();
     }
 
-});
+})
+// Pub Controller
+.controller('PubResultCtrl', function($ionicHistory,$scope,$ionicLoading,Food,$state){
+ $scope.myGoBack = function(){
+    $ionicHistory.goBack();
+  }
+ 
+ var _this = this
+  $ionicLoading.show({
+    template: 'Searching the GSO'
+  })
+       Pub.getAll().success(function(data){
+            $scope.items=data.results;
+                $state.go('result');
+
+        }).then(function(result) {
+    $ionicLoading.hide()
+   // _this.breweries = result.data.breweries
+  });
+
+     $scope.random = function() {
+        return 0.5 - Math.random();
+    }
+
+})
+//Nightlife Controller
+.controller('ClubCtrl', function($ionicHistory,$scope,$ionicLoading,Food,$state){
+ $scope.myGoBack = function(){
+    $ionicHistory.goBack();
+  }
+ 
+ var _this = this
+  $ionicLoading.show({
+    template: 'Searching the GSO'
+  })
+       Nightlife.getAll().success(function(data){
+            $scope.items=data.results;
+                $state.go('result');
+
+        }).then(function(result) {
+    $ionicLoading.hide()
+   // _this.breweries = result.data.breweries
+  });
+
+     $scope.random = function() {
+        return 0.5 - Math.random();
+    }
+
+})
+
+// Parks and Greensways Controller
+.controller('ParkCtrl', function($ionicHistory,$scope,$ionicLoading,Food,$state){
+ $scope.myGoBack = function(){
+    $ionicHistory.goBack();
+  }
+ 
+ var _this = this
+  $ionicLoading.show({
+    template: 'Searching the GSO'
+  })
+       Pub.getAll().success(function(data){
+            $scope.items=data.results;
+                $state.go('result');
+
+        }).then(function(result) {
+    $ionicLoading.hide()
+   // _this.breweries = result.data.breweries
+  });
+
+     $scope.random = function() {
+        return 0.5 - Math.random();
+    }
+
+})
+
+// Movies and Shows Controller
+.controller('MoviesCtrl', function($ionicHistory,$scope,$ionicLoading,Food,$state){
+ $scope.myGoBack = function(){
+    $ionicHistory.goBack();
+  }
+ 
+ var _this = this
+  $ionicLoading.show({
+    template: 'Searching the GSO'
+  })
+       Pub.getAll().success(function(data){
+            $scope.items=data.results;
+                $state.go('result');
+
+        }).then(function(result) {
+    $ionicLoading.hide()
+   // _this.breweries = result.data.breweries
+  });
+
+     $scope.random = function() {
+        return 0.5 - Math.random();
+    }
+
+})
+
+// Art and Museums Controller
+.controller('ArtCtrl', function($ionicHistory,$scope,$ionicLoading,Food,$state){
+ $scope.myGoBack = function(){
+    $ionicHistory.goBack();
+  }
+ 
+ var _this = this
+  $ionicLoading.show({
+    template: 'Searching the GSO'
+  })
+       Pub.getAll().success(function(data){
+            $scope.items=data.results;
+                $state.go('result');
+
+        }).then(function(result) {
+    $ionicLoading.hide()
+   // _this.breweries = result.data.breweries
+  });
+
+     $scope.random = function() {
+        return 0.5 - Math.random();
+    }
+
+})
+;

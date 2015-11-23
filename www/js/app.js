@@ -53,11 +53,42 @@ angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngC
         templateUrl: 'templates/home.html',
         controller: 'HomeCtrl'
   })
-  
+  // Food Result - Home because of teting
   .state('result', {
         url: '/home/result',
         templateUrl: 'templates/home-detail.html',
         controller: 'ResultCtrl'
-  });
+  })
+  // Pub Result
+   .state('pubresult', {
+        url: '/home/pubresult',
+        templateUrl: 'templates/pub-detail.html',
+        controller: 'PubResultCtrl'
+  })
+  //NightLife Result
+    .state('clubresult', {
+        url: '/home/clubresult',
+        templateUrl: 'templates/club-detail.html',
+        controller: 'ClubCtrl'
+  })
+  // Park Result
+    .state('parkresult', {
+        url: '/home/parkresult',
+        templateUrl: 'templates/park-detail.html',
+        controller: 'ParkCtrl'
+  })
+  // Movies/Show Result
+    .state('moviesresult', {
+        url: '/home/moviesresult',
+        templateUrl: 'templates/movies-detail.html',
+        controller: 'MoviesCtrl'
+  })
+  // Art/Museums Result
+    .state('artresult', {
+        url: '/home/artresult',
+        templateUrl: 'templates/art-detail.html',
+        controller: 'ArtCtrl'
+  })
+  ;
     $urlRouterProvider.otherwise('/home');
 });
