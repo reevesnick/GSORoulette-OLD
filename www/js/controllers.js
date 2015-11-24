@@ -4,9 +4,9 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope,$state,$cordovaFacebook){
     $scope.loginFacebook = function(){
  
-        $state.go('home');
+       // $state.go('home');
         
-        /*
+        
   //Browser Login
   if(!(ionic.Platform.isIOS() || ionic.Platform.isAndroid())){
  
@@ -64,7 +64,7 @@ angular.module('starter.controllers', [])
     });
  
   }
- */
+ 
 };
 })
 .controller('HomeCtrl',['$scope','$state','Food','Pub','$ionicLoading' ,function($scope,$state,Food,Pub,$ionicLoading){

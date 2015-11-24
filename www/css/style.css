@@ -12,3 +12,11 @@
 .status-label{
     color: aliceblue !important;
 }
+
+.wrapper {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    
+}
+
