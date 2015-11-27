@@ -6,7 +6,7 @@
 angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngCordova'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+  $ionicPlatform.ready(function($scope) {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -17,6 +17,9 @@ angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngC
     }
       
       Parse.initialize("SQwOQRG77Srys4HiIBKdrPAQla89KPPSljjzMksv", "X3WmND91CkCfpT4ltb0gFB9h7yLm6BgVuAVyXvBV");
+      
+        $scope.currentUser = Parse.User.current();
+
       
       if(!(ionic.Platform.isIOS() || ionic.Platform.isAndroid())){
   window.fbAsyncInit = function() {

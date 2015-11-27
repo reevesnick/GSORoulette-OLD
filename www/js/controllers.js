@@ -69,6 +69,9 @@ angular.module('starter.controllers', [])
 })
 .controller('HomeCtrl',['$scope','$state','Food','Pub','$ionicLoading' ,function($scope,$state,Food,Pub,$ionicLoading){
     
+    $scope.currentUser = Parse.User.current();
+
+    
     //Select Food
     $scope.foodSelect = function(){
         // Loading Screen
