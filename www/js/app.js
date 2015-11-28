@@ -92,5 +92,9 @@ angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngC
         templateUrl: 'templates/art-detail.html',
         controller: 'ArtCtrl'
   });
+    if (Parse.User.current()){
+          $urlRouterProvider.otherwise('/home');
+    }
+    
     $urlRouterProvider.otherwise('/login');
 });

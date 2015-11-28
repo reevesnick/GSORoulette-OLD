@@ -1,16 +1,16 @@
 <ion-view class="custom-blue" view-title="GSORoulette">
   <ion-content class="custom-blue" scroll="false">
         <ion-list class="custom-blue">
-            <div class="Profile">
+            
                 
-                <ion-item class="custom-blue">
-                    <img aligin="left" src="">
-                    <p style="align:center">Name: {{currentUser.get('name')}}</p>
-                    <p>Check-In:0 </p>
-                        <p>Recommendation: 0</p>
-                    <p>Likes:0</p>
+                <ion-item class="custom-blue" ng-click="profileSettings()">
+                    <img style="align:middle" src="http://graph.facebook.com/{{currentUser.get('facebookId')}}/picture?type=small" >
+                    <p style="text-align:center">{{currentUser.get('name')}}</p>
+                    <p style="text-align:left">Check-In:0 </p>
+                        <p style="text-align:right">Recommendation: 0</p>
+                    <p style="text-align:center">Likes:0</p>
                 </ion-item>
-            </div>
+            
             
             <ion-item class="custom-blue" ng-Click="foodSelect()">Food</ion-item>
             <ion-item class="custom-blue" ng-Click="pubSelect()">Pub</ion-item>

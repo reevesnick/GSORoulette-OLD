@@ -15,7 +15,22 @@
 	      <p>{{item.Location}}</p>
           <p>{{item.Phone}}</p>     
           <p>{{item.Hours}}</p>     
-            </div>
+        </div>
+                
+<div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" ng-click="likeButton()">
+      <i class="icon ion-thumbsup"></i>
+      Like
+    </a>
+    <a class="tab-item">
+      <i class="icon ion-chatbox"></i>
+      Recommend
+    </a>
+    <a class="tab-item" >
+      <i class="icon ion-share"></i>
+      Checkin
+    </a>
+  </div>       
 
       </div>
        <ion-button class="button button-assertive ion-loop" style="width:100%" ng-click="myGoBack()">

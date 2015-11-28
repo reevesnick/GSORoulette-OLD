@@ -4,6 +4,16 @@ angular.module('starter.controllers', [])
 .controller('LoginCtrl', function($scope,$state,$cordovaFacebook){
      var fbLogged = new Parse.Promise();
     
+      //Parse.Cloud.useMasterKey();
+
+  /*  
+    var currentUser = Parse.User.current();
+        if (currentUser) {
+            $state.go('home');
+        } else {
+
+    }
+    */
   var fbLoginSuccess = function(response) {
     if (!response.authResponse){
       fbLoginError("Cannot find the authResponse");
@@ -32,7 +42,7 @@ angular.module('starter.controllers', [])
     if (!window.cordova) {
       facebookConnectPlugin.browserInit('911530332265226');
     }
-    facebookConnectPlugin.login(['email'], fbLoginSuccess, fbLoginError);
+    facebookConnectPlugin.login(['email,user_friends,public_profile'], fbLoginSuccess, fbLoginError);
   
     fbLogged.then( function(authData) {
       console.log('Promised');
@@ -44,6 +54,7 @@ angular.module('starter.controllers', [])
           console.log(response);
           userObject.set('name', response.name);
           userObject.set('email', response.email);
+          userObject.set('facebookId', response.id);
           userObject.save();
         },
         function(error) {
@@ -53,15 +64,75 @@ angular.module('starter.controllers', [])
       $state.go('home');
     }, function(error) {
       console.log(error);
-    });
-
- 
-    
+    });   
 };
+    
+    
 })
-.controller('HomeCtrl',['$scope','$state','Food','Pub','$ionicLoading' ,function($scope,$state,Food,Pub,$ionicLoading){
+.controller('HomeCtrl',['$scope','$state','Food','Pub','$ionicLoading','$ionicActionSheet' ,function($scope,$state,Food,Pub,$ionicLoading,$ionicActionSheet){
+    
+      var fbLogged = new Parse.Promise();
+
+    var fbLoginSuccess = function(response) {
+        if (!response.authResponse){
+            fbLoginError("Cannot find the authResponse");
+            return;
+        }
+        var expDate = new Date(
+            new Date().getTime() + response.authResponse.expiresIn * 1000
+        ).toISOString();
+
+        var authData = {
+            id: String(response.authResponse.userID),
+            access_token: response.authResponse.accessToken,
+            expiration_date: expDate
+        }
+        fbLogged.resolve(authData);
+        fbLoginSuccess = null;
+        console.log(response);
+    };
+
+    var fbLoginError = function(error){
+        fbLogged.reject(error);
+    };
     
     $scope.currentUser = Parse.User.current();
+    
+    $scope.profileSettings = function(){
+        
+   // Show the action sheet
+   var hideSheet = $ionicActionSheet.show({
+     buttons: [
+       { text: 'Import from Facebook' },
+       { text: 'Take Picture' },
+       { text: 'Import from Library' }
+     ],
+     titleText: 'When do you want to get your profile picture?',
+     cancelText: 'Cancel',
+     cancel: function() {
+          // add cancel code..
+        },
+     buttonClicked: function(index) {
+         if (index == 0){
+             
+         }
+         else if(index == 1){
+             
+         }
+         else if(index == 2){
+             
+         }
+       return true;
+     }
+   });
+
+   // For example's sake, hide the sheet after two seconds
+   $timeout(function() {
+     hideSheet();
+   }, 2000);
+
+
+}
 
     
     //Select Food
@@ -183,6 +254,23 @@ angular.module('starter.controllers', [])
      $scope.random = function() {
         return 0.5 - Math.random();
     }
+     
+     $scope.likeButton = function(id){
+         var Like = Parse.Object.extend("Food");
+         var like = new Like();
+         like.id = id;
+         
+         like.increment("Like");
+         like.save(null,{
+             success: function(point){
+                 point.increment("Like",1);
+             },
+             error: function(point,error){
+              alert ("We are having problems liking this page. Please try again later.");   
+             }
+             
+         });
+     }
 
 })
 // Pub Controller
