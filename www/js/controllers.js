@@ -2,69 +2,61 @@ angular.module('starter.controllers', [])
 
 
 .controller('LoginCtrl', function($scope,$state,$cordovaFacebook){
+     var fbLogged = new Parse.Promise();
+    
+  var fbLoginSuccess = function(response) {
+    if (!response.authResponse){
+      fbLoginError("Cannot find the authResponse");
+      return;
+    }
+    var expDate = new Date(
+      new Date().getTime() + response.authResponse.expiresIn * 1000
+    ).toISOString();
+
+    var authData = {
+      id: String(response.authResponse.userID),
+      access_token: response.authResponse.accessToken,
+      expiration_date: expDate
+    }
+    fbLogged.resolve(authData);
+    console.log(response);
+  };
+    
+    
+ var fbLoginError = function(error){
+    fbLogged.reject(error);
+  };
+    
     $scope.loginFacebook = function(){
- 
-       // $state.go('home');
-        
-        
-  //Browser Login
-  if(!(ionic.Platform.isIOS() || ionic.Platform.isAndroid())){
- 
-    Parse.FacebookUtils.logIn(null, {
-      success: function(user) {
-        console.log(user);
-        if (!user.existed()) {
-          alert("User signed up and logged in through Facebook!");
-        } else {
-          alert("User logged in through Facebook!");
-        }
-      },
-      error: function(user, error) {
-        alert("User cancelled the Facebook login or did not fully authorize.");
-      }
-    });
- 
-  } 
-  //Native Login
-  else {
- 
-    $cordovaFacebook.login(["public_profile", "email"]).then(function(success){
- 
-      console.log(success);
- 
-      //Need to convert expiresIn format from FB to date
-      var expiration_date = new Date();
-      expiration_date.setSeconds(expiration_date.getSeconds() + success.authResponse.expiresIn);
-      expiration_date = expiration_date.toISOString();
- 
-      var facebookAuthData = {
-        "id": success.authResponse.userID,
-        "access_token": success.authResponse.accessToken,
-        "expiration_date": expiration_date
-      };
- 
-      Parse.FacebookUtils.logIn(facebookAuthData, {
-        success: function(user) {
-          console.log(user);
-          if (!user.existed()) {
-            alert("User signed up and logged in through Facebook!");
-              $state.go('home');
-          } else {
-            alert("User logged in through Facebook!");
-                    $state.go('home');
-          }
+         console.log('Login');
+    if (!window.cordova) {
+      facebookConnectPlugin.browserInit('911530332265226');
+    }
+    facebookConnectPlugin.login(['email'], fbLoginSuccess, fbLoginError);
+  
+    fbLogged.then( function(authData) {
+      console.log('Promised');
+      return Parse.FacebookUtils.logIn(authData);
+    })
+    .then( function(userObject) {
+      facebookConnectPlugin.api('/me', null, 
+        function(response) {
+          console.log(response);
+          userObject.set('name', response.name);
+          userObject.set('email', response.email);
+          userObject.save();
         },
-        error: function(user, error) {
-          alert("User cancelled the Facebook login or did not fully authorize.");
+        function(error) {
+          console.log(error);
         }
-      });
- 
-    }, function(error){
+      );
+      $state.go('home');
+    }, function(error) {
       console.log(error);
     });
+
  
-  }
- 
+    
 };
 })
 .controller('HomeCtrl',['$scope','$state','Food','Pub','$ionicLoading' ,function($scope,$state,Food,Pub,$ionicLoading){

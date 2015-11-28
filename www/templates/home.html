@@ -2,39 +2,10 @@
   <ion-content class="custom-blue" scroll="false">
         <ion-list class="custom-blue">
             <div class="Profile">
-                <script>$(function() {
-    FB.init({
-      appId  : 'APP_ID',
-      status : true, // check login status
-      cookie : true, // enable cookies to allow the server to access the session
-      xfbml  : true  // parse XFBML
-    });
-
-    FB.getLoginStatus(function(response) {
-      if (response.status == 'connected') {
-        getCurrentUserInfo(response)
-      } else {
-        FB.login(function(response) {
-          if (response.authResponse){
-            getCurrentUserInfo(response)
-          } else {
-            console.log('Auth cancelled.')
-          }
-        }, { scope: 'email' });
-      }
-    });
-
-    function getCurrentUserInfo() {
-      FB.api('/me', function(userInfo) {
-        console.log(userInfo.name + ': ' + userInfo.email);
-      });
-    }
-  });
-                </script>
                 
                 <ion-item class="custom-blue">
                     <img aligin="left" src="">
-                    <p style="align:center">Name: {{currentUser.get('username')}}</p>
+                    <p style="align:center">Name: {{currentUser.get('name')}}</p>
                     <p>Check-In:0 </p>
                         <p>Recommendation: 0</p>
                     <p>Likes:0</p>
