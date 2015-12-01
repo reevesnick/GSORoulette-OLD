@@ -2,27 +2,33 @@
     <ion-header-bar class="custom-blue"></ion-header-bar>
   <ion-content class="custom-blue" scroll="true">
         <ion-list class="custom-blue">
-
+<div class="content">
                 <ion-item class="custom-blue" ng-click="profileSettings()">
-                    <img id="profile-image" src="http://graph.facebook.com/{{currentUser.get('facebookId')}}/picture?type=large" >
-                    <p id="profile-info">{{currentUser.get('name')}}</p>
-                    <p id="profile-info">Check-In:{{currentUser.get('likes')}} </p>
-                    <p id="profile-info">Recommendation:{{currentUser.get('recommend')}}</p>
-                    <p id="profile-info">Likes:{{currentUser.get('checkin')}}</p>
+                    <img style="text-align:left"src="http://graph.facebook.com/{{currentUser.get('facebookId')}}/picture?width=100&height=100" >
+                    <p style="color: white;">{{currentUser.get('name')}}</p> <a></a>
+                    <p style="color:white;">Check-In:{{currentUser.get('likes')}}
+                    <span style="color:white;margin-right:1.25em;">Recommendation:{{currentUser.get('recommend')}}</span>
+                    </p>
+                    <p style="color:white;" >Likes:{{currentUser.get('checkin')}}</p>
+                    
                 </ion-item>
+            </div>
+            <div>        <h5 style="text-align:center;color:white;">What places are you lookin for today?</h5>
+</div>
             
 
-        
             <ion-item class="custom-blue" ng-Click="foodSelect()">Food</ion-item>
             <ion-item class="custom-blue" ng-Click="pubSelect()">Pub</ion-item>
             <ion-item class="custom-blue" ng-Click="clubSelect()">Nightlife</ion-item>
             <ion-item class="custom-blue" ng-Click="parkSelect()">Parks/Greenways</ion-item>
             <ion-item class="custom-blue" ng-Click="moviesSelect()">Movies/Shows</ion-item>
             <ion-item class="custom-blue" ng-Click="artSelect()">Art/Museums</ion-item>
-            
+ <!--           
  <ion-button class="button button-balanced ion-loop" style="width:100%" ng-click="create()">
                 Roll
             </ion-button>
+
+-->
         </ion-list>
   </ion-content>
 </ion-view>
