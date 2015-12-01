@@ -1,17 +1,18 @@
-<ion-view class="custom-blue" view-title="GSORoulette">
-  <ion-content class="custom-blue" scroll="false">
+<ion-view view-title="GSORoulette">
+    <ion-header-bar class="custom-blue"></ion-header-bar>
+  <ion-content class="custom-blue" scroll="true">
         <ion-list class="custom-blue">
-            
-                
+
                 <ion-item class="custom-blue" ng-click="profileSettings()">
-                    <img style="align:middle" src="http://graph.facebook.com/{{currentUser.get('facebookId')}}/picture?type=small" >
-                    <p style="text-align:center">{{currentUser.get('name')}}</p>
-                    <p style="text-align:left">Check-In:0 </p>
-                        <p style="text-align:right">Recommendation: 0</p>
-                    <p style="text-align:center">Likes:0</p>
+                    <img id="profile-image" src="http://graph.facebook.com/{{currentUser.get('facebookId')}}/picture?type=large" >
+                    <p id="profile-info">{{currentUser.get('name')}}</p>
+                    <p id="profile-info">Check-In:{{currentUser.get('likes')}} </p>
+                    <p id="profile-info">Recommendation:{{currentUser.get('recommend')}}</p>
+                    <p id="profile-info">Likes:{{currentUser.get('checkin')}}</p>
                 </ion-item>
             
-            
+
+        
             <ion-item class="custom-blue" ng-Click="foodSelect()">Food</ion-item>
             <ion-item class="custom-blue" ng-Click="pubSelect()">Pub</ion-item>
             <ion-item class="custom-blue" ng-Click="clubSelect()">Nightlife</ion-item>
