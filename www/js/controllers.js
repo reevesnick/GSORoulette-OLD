@@ -273,6 +273,10 @@ angular.module('starter.controllers', [])
          return 0.5 - Math.random();
     }
     
+     $scope.directions = function(){
+            directions.navigateToAddress(items.directions);      
+     }
+     
      $scope.likeButton = function(){
          Parse.User.current().increment('likes').save();
 
@@ -305,20 +309,7 @@ angular.module('starter.controllers', [])
               else{
                   
               }
-          });
-        /*  
-          facebookConnectPlugin.showDialog( 
-    {
-        method: "feed",
-        picture:'https://www.google.co.jp/logos/doodles/2014/doodle-4-google-2014-japan-winner-5109465267306496.2-hp.png',
-        name:'GSORoulette',
-        message:'',    
-        caption: 'Recommended Item in Greensboro',
-        description: 'Recommended a place in Greensboro. Check out the App.'
-    }, 
-    function (response) { console.log(JSON.stringify(response)) },
-    function (response) { console.log(JSON.stringify(response)) });
-     */     
+          });  
      }  
       
       $scope.checkIn = function(){
@@ -327,7 +318,7 @@ angular.module('starter.controllers', [])
 
 })
 // Pub Controller
-.controller('PubResultCtrl', function($ionicHistory,$scope,$ionicLoading,Pub,$state){
+.controller('PubResultCtrl', function($ionicHistory,$scope,$ionicLoading,Pub,$state,$ionicPopup){
  $scope.myGoBack = function(){
     $ionicHistory.goBack();
   }
@@ -348,10 +339,54 @@ angular.module('starter.controllers', [])
      $scope.random = function() {
         return 0.5 - Math.random();
     }
+     
+          
+       $scope.directions = function(){
+            directions.navigateToAddress(items.directions);      
+     }
+     
+     $scope.likeButton = function(){
+         Parse.User.current().increment('likes').save();
+
+     }
+     
+      $scope.recommendedButton = function(){
+         Parse.User.current().increment('recommend').save();
+          
+          var recommendedPopup = $ionicPopup.confirm({
+              title: 'Share Recommendation',
+              template:'Do you want to share your recommendations to your Facebook?'
+          });
+          
+          recommendedPopup.then(function(res){
+              if (res){  
+          facebookConnectPlugin.showDialog( 
+    {
+        method: "feed",
+        picture:'https://www.google.co.jp/logos/doodles/2014/doodle-4-google-2014-japan-winner-5109465267306496.2-hp.png',
+        name:'GSORoulette',
+        message:'',    
+        caption: 'Recommended Item in Greensboro',
+        description: 'Recommended a place in Greensboro. Check out the App.'
+    }, 
+    function (response) { console.log(JSON.stringify(response)) },
+    function (response) { console.log(JSON.stringify(response)) });
+      
+              }
+              
+              else{
+                  
+              }
+          });  
+     }  
+      
+      $scope.checkIn = function(){
+         Parse.User.current().increment('checkin').save();
+     }
 
 })
 //Nightlife Controller
-.controller('ClubCtrl', function($ionicHistory,$scope,$ionicLoading,Nightlife,$state){
+.controller('ClubCtrl', function($ionicHistory,$scope,$ionicLoading,Nightlife,$state,$ionicPopup){
  $scope.myGoBack = function(){
     $ionicHistory.goBack();
   }
@@ -372,11 +407,54 @@ angular.module('starter.controllers', [])
      $scope.random = function() {
         return 0.5 - Math.random();
     }
+     
+      $scope.directions = function(){
+            directions.navigateToAddress(items.directions);      
+     }
+     
+     $scope.likeButton = function(){
+         Parse.User.current().increment('likes').save();
+
+     }
+     
+      $scope.recommendedButton = function(){
+         Parse.User.current().increment('recommend').save();
+          
+          var recommendedPopup = $ionicPopup.confirm({
+              title: 'Share Recommendation',
+              template:'Do you want to share your recommendations to your Facebook?'
+          });
+          
+          recommendedPopup.then(function(res){
+              if (res){  
+          facebookConnectPlugin.showDialog( 
+    {
+        method: "feed",
+        picture:'https://www.google.co.jp/logos/doodles/2014/doodle-4-google-2014-japan-winner-5109465267306496.2-hp.png',
+        name:'GSORoulette',
+        message:'',    
+        caption: 'Recommended Item in Greensboro',
+        description: 'Recommended a place in Greensboro. Check out the App.'
+    }, 
+    function (response) { console.log(JSON.stringify(response)) },
+    function (response) { console.log(JSON.stringify(response)) });
+      
+              }
+              
+              else{
+                  
+              }
+          });  
+     }  
+      
+      $scope.checkIn = function(){
+         Parse.User.current().increment('checkin').save();
+     }
 
 })
 
 // Parks and Greensways Controller
-.controller('ParkCtrl', function($ionicHistory,$scope,$ionicLoading,ParksGreenways,$state){
+.controller('ParkCtrl', function($ionicHistory,$scope,$ionicLoading,ParksGreenways,$state,$ionicPopup){
  $scope.myGoBack = function(){
     $ionicHistory.goBack();
   }
@@ -397,11 +475,54 @@ angular.module('starter.controllers', [])
      $scope.random = function() {
         return 0.5 - Math.random();
     }
+     
+      $scope.directions = function(){
+            directions.navigateToAddress(items.directions);      
+     }
+     
+     $scope.likeButton = function(){
+         Parse.User.current().increment('likes').save();
+
+     }
+     
+      $scope.recommendedButton = function(){
+         Parse.User.current().increment('recommend').save();
+          
+          var recommendedPopup = $ionicPopup.confirm({
+              title: 'Share Recommendation',
+              template:'Do you want to share your recommendations to your Facebook?'
+          });
+          
+          recommendedPopup.then(function(res){
+              if (res){  
+          facebookConnectPlugin.showDialog( 
+    {
+        method: "feed",
+        picture:'https://www.google.co.jp/logos/doodles/2014/doodle-4-google-2014-japan-winner-5109465267306496.2-hp.png',
+        name:'GSORoulette',
+        message:'',    
+        caption: 'Recommended Item in Greensboro',
+        description: 'Recommended a place in Greensboro. Check out the App.'
+    }, 
+    function (response) { console.log(JSON.stringify(response)) },
+    function (response) { console.log(JSON.stringify(response)) });
+      
+              }
+              
+              else{
+                  
+              }
+          });  
+     }  
+      
+      $scope.checkIn = function(){
+         Parse.User.current().increment('checkin').save();
+     }
 
 })
 
 // Movies and Shows Controller
-.controller('MoviesCtrl', function($ionicHistory,$scope,$ionicLoading,MoviesShows,$state){
+.controller('MoviesCtrl', function($ionicHistory,$scope,$ionicLoading,MoviesShows,$state,$ionicPopup){
  $scope.myGoBack = function(){
     $ionicHistory.goBack();
   }
@@ -423,10 +544,53 @@ angular.module('starter.controllers', [])
         return 0.5 - Math.random();
     }
 
+     
+      $scope.directions = function(){
+            directions.navigateToAddress(items.directions);      
+     }
+     
+     $scope.likeButton = function(){
+         Parse.User.current().increment('likes').save();
+
+     }
+     
+      $scope.recommendedButton = function(){
+         Parse.User.current().increment('recommend').save();
+          
+          var recommendedPopup = $ionicPopup.confirm({
+              title: 'Share Recommendation',
+              template:'Do you want to share your recommendations to your Facebook?'
+          });
+          
+          recommendedPopup.then(function(res){
+              if (res){  
+          facebookConnectPlugin.showDialog( 
+    {
+        method: "feed",
+        picture:'https://www.google.co.jp/logos/doodles/2014/doodle-4-google-2014-japan-winner-5109465267306496.2-hp.png',
+        name:'GSORoulette',
+        message:'',    
+        caption: 'Recommended Item in Greensboro',
+        description: 'Recommended a place in Greensboro. Check out the App.'
+    }, 
+    function (response) { console.log(JSON.stringify(response)) },
+    function (response) { console.log(JSON.stringify(response)) });
+      
+              }
+              
+              else{
+                  
+              }
+          });  
+     }  
+      
+      $scope.checkIn = function(){
+         Parse.User.current().increment('checkin').save();
+     }
 })
 
 // Art and Museums Controller
-.controller('ArtCtrl', function($ionicHistory,$scope,$ionicLoading,ArtMuseums,$state){
+.controller('ArtCtrl', function($ionicHistory,$scope,$ionicLoading,ArtMuseums,$state,$ionicPopup){
  $scope.myGoBack = function(){
     $ionicHistory.goBack();
   }
@@ -447,6 +611,49 @@ angular.module('starter.controllers', [])
      $scope.random = function() {
         return 0.5 - Math.random();
     }
+     
+      $scope.directions = function(){
+            directions.navigateToAddress(items.directions);      
+     }
+     
+     $scope.likeButton = function(){
+         Parse.User.current().increment('likes').save();
+
+     }
+     
+      $scope.recommendedButton = function(){
+         Parse.User.current().increment('recommend').save();
+          
+          var recommendedPopup = $ionicPopup.confirm({
+              title: 'Share Recommendation',
+              template:'Do you want to share your recommendations to your Facebook?'
+          });
+          
+          recommendedPopup.then(function(res){
+              if (res){  
+          facebookConnectPlugin.showDialog( 
+    {
+        method: "feed",
+        picture:'https://www.google.co.jp/logos/doodles/2014/doodle-4-google-2014-japan-winner-5109465267306496.2-hp.png',
+        name:'GSORoulette',
+        message:'',    
+        caption: 'Recommended Item in Greensboro',
+        description: 'Recommended a place in Greensboro. Check out the App.'
+    }, 
+    function (response) { console.log(JSON.stringify(response)) },
+    function (response) { console.log(JSON.stringify(response)) });
+      
+              }
+              
+              else{
+                  
+              }
+          });  
+     }  
+      
+      $scope.checkIn = function(){
+         Parse.User.current().increment('checkin').save();
+     }
 
 })
 ;
