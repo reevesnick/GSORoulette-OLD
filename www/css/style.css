@@ -1,9 +1,43 @@
 /* Empty. Add your own CSS if you like */
+
+@font-face {
+    font-family: 'circulamedium';
+    src: url('.../fonts/circulamedium.eot');
+    src: url('.../fonts/circulamedium.eot') format('embedded-opentype'),
+         url('.../fonts/circulamedium.woff') format('woff'),
+         url('.../fonts/circulamedium.ttf') format('truetype'),
+         url('.../fonts/circulamedium.svg#circulamedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body{
+    font-family: "circulamedium" !important;
+    font-size: 21px;
+}
+
+ .header {
+    -webkit-flex: 4;
+    background-size: cover;
+    position:absolute;
+    top:35%;
+    left:0.5%;
+     padding-left: inherit;
+     padding-right: inherit;
+}
+.logo{
+    width: 260px;
+
+}
 .custom-blue,ion-list{
   color : white !important;
   background-color:#0099cc !important;
 }
 
+.login {
+  background: url("../resources/GSO_Rou_Login background.png") no-repeat center center fixed;
+  background-size: cover;
+}
 
 .item .item-content {
   background-color: #0099cc !important;

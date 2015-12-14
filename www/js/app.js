@@ -9,6 +9,7 @@ angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngC
   $ionicPlatform.ready(function($scope,$ionicPopup) {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
+
       
        // Check for network connection
     if(window.Connection) {
@@ -112,5 +113,5 @@ angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngC
           $urlRouterProvider.otherwise('/home');
     }
     
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/login');
 });

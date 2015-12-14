@@ -6,14 +6,14 @@ angular.module('starter.controllers', [])
     
       //Parse.Cloud.useMasterKey();
 
-  /*
+  
     var currentUser = Parse.User.current();
         if (currentUser) {
             $state.go('home');
         } else {
 
     }
-    */
+    
   var fbLoginSuccess = function(response) {
     if (!response.authResponse){
       fbLoginError("Cannot find the authResponse");
@@ -269,9 +269,11 @@ angular.module('starter.controllers', [])
    // _this.breweries = result.data.breweries
   });
 
-     $scope.random = function() {
-         return 0.5 - Math.random();
-    }
+     $scope.random = function(){
+         return 1-Math.random();
+     }
+    
+
     
      $scope.directions = function(){
             directions.navigateToAddress(items.directions);      
@@ -337,7 +339,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 0.5 - Math.random();
+        return 1 - Math.random();
     }
      
           
@@ -405,7 +407,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 0.5 - Math.random();
+        return 1 - Math.random();
     }
      
       $scope.directions = function(){
@@ -473,7 +475,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 0.5 - Math.random();
+        return 1 - Math.random();
     }
      
       $scope.directions = function(){
@@ -541,7 +543,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 0.5 - Math.random();
+        return 1 - Math.random();
     }
 
      
@@ -609,7 +611,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 0.5 - Math.random();
+        return 1 - Math.random();
     }
      
       $scope.directions = function(){
@@ -617,7 +619,14 @@ angular.module('starter.controllers', [])
      }
      
      $scope.likeButton = function(){
-         Parse.User.current().increment('likes').save();
+         var _this = this
+  $ionicLoading.show({
+    template: 'Liking'
+  })
+         Parse.User.current().increment('likes').save().then(function(result) {
+    $ionicLoading.hide()
+   // _this.breweries = result.data.breweries
+  });
 
      }
      

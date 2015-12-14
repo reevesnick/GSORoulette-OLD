@@ -5,7 +5,7 @@
 <div class="content">
                 <ion-item class="custom-blue" ng-click="profileSettings()">
                     <img style="text-align:left"src="http://graph.facebook.com/{{currentUser.get('facebookId')}}/picture?width=100&height=100" >
-                    <p style="color: white;">{{currentUser.get('name')}}</p> <a></a>
+                    <p style="color: white;">{{currentUser.get('name')}}</p>
                     <p style="color:white;">Check-In:{{currentUser.get('likes')}}
                     <span style="color:white;margin-right:1.25em;">Recommendation:{{currentUser.get('recommend')}}</span>
                     </p>
@@ -16,14 +16,37 @@
             <div>        <h5 style="text-align:center;color:white;">What places are you lookin for today?</h5>
 </div>
             
+<div class="iconsList">
+            <ion-item class="custom-blue" ng-Click="foodSelect()">
+                <a class="item-icon-right">
+                    <i class="icon ion-fork"></i>
+                    Food
+                </a>
+    </ion-item>
+            <ion-item class="custom-blue" ng-Click="pubSelect()">
+                <a class="item-icon-right">
+                    <i class="icon ion-beer"></i>Pub
+                </a></ion-item>
+            <ion-item class="custom-blue" ng-Click="clubSelect()"> 
+                <a class="item-icon-right">
+                <i class="icon ion-mic-b"></i>Nightlife
+                </a></ion-item>
+            <ion-item class="custom-blue" ng-Click="parkSelect()">
+                 <a class="item-icon-right">
+                     <i class="icon ion-ios-baseball"></i>Parks/Greenways</a></ion-item>
+            <ion-item class="custom-blue" ng-Click="moviesSelect()">
+                <a class="item-icon-right">
+                    <i class="icon ion-ios-film"></i>
+                Movies/Shows</a>
+    </ion-item>
+            <ion-item class="custom-blue" ng-Click="artSelect()">
+                 <a class="item-icon-right">
+                     <i class="icon ion-paintbrush"></i>Art/Museums</a></ion-item>
+            </div>
+            
+            <!--         
 
-            <ion-item class="custom-blue" ng-Click="foodSelect()">Food</ion-item>
-            <ion-item class="custom-blue" ng-Click="pubSelect()">Pub</ion-item>
-            <ion-item class="custom-blue" ng-Click="clubSelect()">Nightlife</ion-item>
-            <ion-item class="custom-blue" ng-Click="parkSelect()">Parks/Greenways</ion-item>
-            <ion-item class="custom-blue" ng-Click="moviesSelect()">Movies/Shows</ion-item>
-            <ion-item class="custom-blue" ng-Click="artSelect()">Art/Museums</ion-item>
- <!--           
+
  <ion-button class="button button-balanced ion-loop" style="width:100%" ng-click="create()">
                 Roll
             </ion-button>
