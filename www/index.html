@@ -7,7 +7,7 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/circulamedium.css" rel="stylesheet">
+    <link href="fonts/circulamedium/circulamedium.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -16,6 +16,7 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>  
 
       <!--Parse JS SDK -->
 	<script src="https://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
@@ -60,6 +61,14 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
+      <script>
+      // iOS9 patch, see https://github.com/driftyco/ionic/issues/4082
+      if ( ionic.Platform.isIOS() && ionic.Platform.version().toString()[ 0 ] === '9' ) {
+        var patch = document.createElement( 'script' );
+        patch.src = 'lib/ionic/js/ios9-$browser-patch.js';
+        document.head.appendChild( patch );
+      }
+    </script>
 
   </head>
   <body ng-app="starter">

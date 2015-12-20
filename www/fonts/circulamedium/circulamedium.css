@@ -8,3 +8,7 @@
          url('fonts/circulamedium.svg#circulamedium') format('svg');
 }
 
+.body{
+    font-family: "circulamedium" !important;
+    font-size: 21px;
+}

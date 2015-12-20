@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
 
+
 .controller('LoginCtrl', function($scope,$state,$cordovaFacebook){
      var fbLogged = new Parse.Promise();
     
@@ -269,8 +270,9 @@ angular.module('starter.controllers', [])
    // _this.breweries = result.data.breweries
   });
 
+    
      $scope.random = function(){
-         return 1-Math.random();
+        return Math.random(5%5);
      }
     
 
@@ -339,7 +341,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 1 - Math.random();
+        return Math.random(5);
     }
      
           
@@ -407,7 +409,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 1 - Math.random();
+        return Math.random(5%5);
     }
      
       $scope.directions = function(){
@@ -475,7 +477,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 1 - Math.random();
+        return Math.random(5%5);
     }
      
       $scope.directions = function(){
@@ -543,7 +545,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 1 - Math.random();
+        return Math.random(5%5);
     }
 
      
@@ -611,7 +613,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return 1 - Math.random();
+        return Math.random(5%5);
     }
      
       $scope.directions = function(){
