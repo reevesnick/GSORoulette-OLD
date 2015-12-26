@@ -342,6 +342,7 @@ angular.module('starter.controllers', [])
 
      $scope.random = function() {
         return Math.random(5%5)-5;
+
     }
      
           

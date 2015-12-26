@@ -1,4 +1,12 @@
 {
   "name": "GSORoulette",
-  "app_id": "08104950"
+  "app_id": "08104950",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
