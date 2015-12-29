@@ -15,30 +15,34 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
+@font-face {
+    font-family: 'Circula';
+    src: url('../lib/ionic/fonts/circulamedium-webfont.eot');
+    src: url('../lib/ionic/fonts/circulamedium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../lib/ionic/fonts/circulamedium-webfont.woff') format('woff'),
+         url('../lib/ionic/fonts/circulamedium-webfont.ttf') format('truetype'),
+         url('../lib/ionic/fonts/circulamedium-webfont.svg#circulamedium-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
+$circula-font-path: "http://www.myfontfree.com/data/29/c/circula/circula-medium.otf" !default
+
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-@font-face {
-    font-family: 'Circula';
-    src: url('lib/ionic/fonts/circulamedium-webfont.eot');
-    src: url('lib/ionic/fonts/circulamedium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('lib/ionic/fonts/circulamedium-webfont.woff') format('woff'),
-         url('lib/ionic/fonts/circulamedium-webfont.ttf') format('truetype'),
-         url('lib/ionic/fonts/circulamedium-webfont.svg#circulamedium-webfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+
 
 .body{
-    font-family: "Circula" !important;
+    font-family: $circula-gont-path;
     font-size: 21px;
 }
 
+
  .header {
-    -webkit-flex: 4;
+    //-webkit-flex: 4;
     background-size: cover;
     position:absolute;
     top:35%;
@@ -82,7 +86,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .content img {
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 10px;
     float: left;
 }
 

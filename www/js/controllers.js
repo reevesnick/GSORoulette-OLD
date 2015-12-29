@@ -159,7 +159,7 @@ angular.module('starter.controllers', [])
         // Loading Screen
         var _this = this
             $ionicLoading.show({
-                template: 'Searching the GSO'
+                template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Searching the GSO'
         })
        Food.getAll().success(function(data){
             $scope.items=data.results;
@@ -175,7 +175,7 @@ angular.module('starter.controllers', [])
         // Loading Screen
         var _this = this
             $ionicLoading.show({
-                template: 'Searching the GSO'
+                template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Searching the GSO'
         })
        Pub.getAll().success(function(data){
             $scope.items=data.results;
@@ -191,7 +191,7 @@ angular.module('starter.controllers', [])
         // Loading Screen
         var _this = this
             $ionicLoading.show({
-                template: 'Searching the GSO'
+                template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Searching the GSO'
         })
        Pub.getAll().success(function(data){
             $scope.items=data.results;
@@ -207,7 +207,7 @@ angular.module('starter.controllers', [])
         // Loading Screen
         var _this = this
             $ionicLoading.show({
-                template: 'Searching the GSO'
+                template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Searching the GSO'
         })
        Pub.getAll().success(function(data){
             $scope.items=data.results;
@@ -223,7 +223,7 @@ angular.module('starter.controllers', [])
         // Loading Screen
         var _this = this
             $ionicLoading.show({
-                template: 'Searching the GSO'
+                template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Searching the GSO'
         })
        Pub.getAll().success(function(data){
             $scope.items=data.results;
@@ -239,7 +239,7 @@ angular.module('starter.controllers', [])
         // Loading Screen
         var _this = this
             $ionicLoading.show({
-                template: 'Searching the GSO'
+                template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Searching the GSO'
         })
        Pub.getAll().success(function(data){
             $scope.items=data.results;
@@ -325,6 +325,8 @@ angular.module('starter.controllers', [])
 .controller('PubResultCtrl', function($ionicHistory,$scope,$ionicLoading,Pub,$state,$ionicPopup){
  $scope.myGoBack = function(){
     $ionicHistory.goBack();
+     
+    
   }
  
  var _this = this
