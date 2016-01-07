@@ -14,7 +14,7 @@ angular.module('starter.controllers', [])
         } else {
 
     }
-    
+   
   var fbLoginSuccess = function(response) {
     if (!response.authResponse){
       fbLoginError("Cannot find the authResponse");
@@ -109,6 +109,7 @@ angular.module('starter.controllers', [])
        { text: 'Share Status' }
      ],
      titleText: 'Facebook Settings',
+     destructiveText: 'Log Out',
      cancelText: 'Cancel',
      cancel: function() {
           // add cancel code..
@@ -142,7 +143,15 @@ angular.module('starter.controllers', [])
     function (response) { alert(JSON.stringify(response)) });
          }
        return true;
-     }
+     },
+        destructiveButtonClicked: function() {
+        //Do Stuff
+       
+       Parse.User.logOut();
+       $state.go('login');
+       return true;
+    }
+
    });
 
    // For example's sake, hide the sheet after two seconds
@@ -259,7 +268,7 @@ angular.module('starter.controllers', [])
  
  var _this = this
   $ionicLoading.show({
-    template: 'Searching the GSO'
+    template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Showing Results'
   })
        Food.getAll().success(function(data){
             $scope.items=data.results;
@@ -272,7 +281,7 @@ angular.module('starter.controllers', [])
 
     
      $scope.random = function(){
-        return Math.random(5%5)-5;
+        return Math.random() <= 1;
      }
     
 
@@ -331,7 +340,7 @@ angular.module('starter.controllers', [])
  
  var _this = this
   $ionicLoading.show({
-    template: 'Searching the GSO'
+    template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Showing Results'
   })
        Pub.getAll().success(function(data){
             $scope.items=data.results;
@@ -343,7 +352,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random(5%5)-5;
+        return Math.random <= 1;
 
     }
      
@@ -400,7 +409,7 @@ angular.module('starter.controllers', [])
  
  var _this = this
   $ionicLoading.show({
-    template: 'Searching the GSO'
+    template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Showing Results'
   })
        Nightlife.getAll().success(function(data){
             $scope.items=data.results;
@@ -412,7 +421,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random(5%5)-5;
+        return Math.random <= 1;
     }
      
       $scope.directions = function(){
@@ -468,7 +477,7 @@ angular.module('starter.controllers', [])
  
  var _this = this
   $ionicLoading.show({
-    template: 'Searching the GSO'
+    template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Showing Results'
   })
        ParksGreenways.getAll().success(function(data){
             $scope.items=data.results;
@@ -480,7 +489,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random(5%5)-5;
+        return Math.random <= 1;
     }
      
       $scope.directions = function(){
@@ -536,7 +545,7 @@ angular.module('starter.controllers', [])
  
  var _this = this
   $ionicLoading.show({
-    template: 'Searching the GSO'
+    template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Showing Results'
   })
        MoviesShows.getAll().success(function(data){
             $scope.items=data.results;
@@ -548,7 +557,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random(5%5)-5;
+        return Math.random <= 1;
     }
 
      
@@ -604,7 +613,7 @@ angular.module('starter.controllers', [])
  
  var _this = this
   $ionicLoading.show({
-    template: 'Searching the GSO'
+    template: '<ion-spinner icon="lines" class="spinner-balanced"></ion-spinner><br>Showing Results'
   })
        ArtMuseums.getAll().success(function(data){
             $scope.items=data.results;
@@ -616,7 +625,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random(5%5)-5;
+        return Math.random() <= 1;
     }
      
       $scope.directions = function(){

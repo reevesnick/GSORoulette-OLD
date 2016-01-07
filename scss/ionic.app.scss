@@ -36,7 +36,7 @@ $circula-font-path: "http://www.myfontfree.com/data/29/c/circula/circula-medium.
 
 
 .body{
-    font-family: $circula-gont-path;
+    font-family: "Circula";
     font-size: 21px;
 }
 
@@ -52,6 +52,7 @@ $circula-font-path: "http://www.myfontfree.com/data/29/c/circula/circula-medium.
 }
 .logo{
     width: 260px;
+    right:1px;
 
 }
 .custom-blue,ion-list{
