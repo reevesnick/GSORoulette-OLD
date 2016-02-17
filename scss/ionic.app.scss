@@ -52,7 +52,8 @@ $circula-font-path: "http://www.myfontfree.com/data/29/c/circula/circula-medium.
 }
 .logo{
     width: 260px;
-    right:1px;
+    left:30px;
+    z-index: -1;
 
 }
 .custom-blue,ion-list{

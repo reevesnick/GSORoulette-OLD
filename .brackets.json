@@ -1,5 +1,6 @@
 {
     "jscodehints.detectedExclusions": [
-        "/Users/neegbeahreeves/Documents/GSORoulette/GSORoulette/www/js/services.js"
+        "/Users/neegbeahreeves/Documents/GSORoulette/GSORoulette/www/js/services.js",
+        "/Users/neegbeahreeves/Documents/GSORoulette-OLD/GSORoulette/platforms/ios/build/emulator/GSORoulette.app/www/plugins/ionic-plugin-keyboard/www/ios/keyboard.js"
     ]
 }

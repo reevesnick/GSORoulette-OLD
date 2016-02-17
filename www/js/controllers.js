@@ -281,7 +281,7 @@ angular.module('starter.controllers', [])
 
     
      $scope.random = function(){
-        return Math.random() <= 1;
+        return Math.random(5%5)-5;
      }
     
 
@@ -352,7 +352,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random <= 1;
+        return Math.random (5%5)-5;
 
     }
      
@@ -421,7 +421,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random <= 1;
+        return Math.random (5%5)-5 ;
     }
      
       $scope.directions = function(){
@@ -489,7 +489,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random <= 1;
+        return Math.random(5%5)-5;
     }
      
       $scope.directions = function(){
@@ -557,7 +557,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random <= 1;
+        return Math.random (5%5)-5;
     }
 
      
@@ -625,7 +625,7 @@ angular.module('starter.controllers', [])
   });
 
      $scope.random = function() {
-        return Math.random() <= 1;
+        return Math.random(5%5)-5;
     }
      
       $scope.directions = function(){
