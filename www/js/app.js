@@ -113,5 +113,5 @@ angular.module('starter', ['ionic','starter.controllers','GSOData.services','ngC
           $urlRouterProvider.otherwise('/home');
     }
     
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/home');
 });
