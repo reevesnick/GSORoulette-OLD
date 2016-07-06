@@ -7,8 +7,8 @@ This requires Node.js to be installed in your computer. If you dont have Node.js
 (https://nodejs.org/en/)[https://nodejs.org/en/]
 
 After installation of Node.js, you will need to type the following command:
-  Mac/Linux/Ubuntu: In terminal, you will need to type the following: $ sudo npm install -g cordova
-  Windows: You will have to use Command Prompt as an Administrator to access priviligies. Type in npm install -g cordova
+  Mac/Linux/Ubuntu: In terminal, you will need to type the following: `$ sudo npm install -g cordova`
+  Windows: You will have to use Command Prompt as an Administrator to access priviligies. Type in `npm install -g cordova`
   
 Then install Ionic in the same Terminal/Command Prompt:
   Mac/Linuc/Ubuntu: `$sudo npm install -g ionic`
