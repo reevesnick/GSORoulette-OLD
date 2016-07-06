@@ -4,7 +4,7 @@ Mobile App that generate random attractions, restaurants, and local places aroun
 ## Installation
  
 This requires Node.js to be installed in your computer. If you dont have Node.js installed in your computer, you can install it here:
-(https://nodejs.org/en/)[https://nodejs.org/en/]
+[https://nodejs.org/en/]
 
 After installation of Node.js, you will need to type the following command:
   Mac/Linux/Ubuntu: In terminal, you will need to type the following: `$ sudo npm install -g cordova`
